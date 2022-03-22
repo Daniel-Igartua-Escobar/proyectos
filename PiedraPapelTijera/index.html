@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
 
-    <span>Elige uno: </span>
-    <button>Jugar</button>
-    <div>
-        <button class="objects" id="piedra"></button>
-        <button class="objects" id="papel"></button>
-        <button class="objects" id="tijera"></button>
+    <header></header>
+    <h1>Piedra, Papel o Tijera</h1>
+    <div class="scoreboard">
+        <span id="markerPlayer">0</span>
+        <span>:</span>
+        <span id="markerBot">0</span>
     </div>
+
+    <span id="result" class="result" result="Empate"></span>
+    <div>
+        <img id="icon" src="images/piedra.png" alt="">
+    </div>
+
+    <footer>
+        <div>
+            <button class="object-btn piedra" onclick="checkPlay('piedra')"></button>
+            <button class="object-btn papel" onclick="checkPlay('papel')"></button>
+            <button class="object-btn tijera" onclick="checkPlay('tijera')"></button>
+        </div>  
+        <button class="play-btn" onclick="restarGame()">Reiniciar</button>
+    </footer>
 
 </body>
 </html>

@@ -1,20 +1,100 @@
-.objects {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: bisque;
+}
+
+header {
+    background-image:url(images/header.png);
+}
+
+.scoreboard {
+    font-size: 6rem;
+}
+
+.result {
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.result[result="Gana"]::before {
+    color: green;
+    content: "¡Ganaste!";
+}
+
+.result[result="Pierde"]::before {
+    color: red;
+    content: "¡Perdiste!";
+}
+
+.result[result="Empate"]::before {
+    color: black;
+    content: "¡Empate!";
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.object-btn {
+    margin: 1rem;
     background-repeat:no-repeat;
     height:100px;
     width:100px;
-    background-position:center;
+    background-position: center;
     background-size: 100% 100%;
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.objects#piedra {
-    background-image:url(images/piedra.jpeg);
+.object-btn:focus {
+    background-color: rgba(49, 138, 172, 1);
 }
 
-.objects#papel {
+.object-btn.piedra {
+    background-image:url(images/piedra.png);
+}
+
+.object-btn.papel {
     background-image:url(images/papel.png);
 }
 
-.objects#tijera {
-    background-image:url(images/tijera.jpeg);
+.object-btn.tijera {
+    background-image:url(images/tijera.png);
+}
+
+.play-btn {
+    margin: 1rem;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: lightslategray;
+    border: 2px solid;
+    border-color: lightslategray;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+}
+
+.play-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -12,7 +12,7 @@ Mocha es un framework de pruebas de JavaScript que se ejecuta en Node.js. Nos da
 
 Es un librería de aserciones, la cual se puede emparejar con cualquier marco de pruebas de Javascript. Chai tiene varias interfaces: assert, expect y should, que permiten al desarrollador elegir el estilo que le resulte más legible y cómodo a la hora de desarrollar sus 
 
-```bash
+```shell
   npm install --save-dev mocha
   mkdir test
   cd test

@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btns-container {
+  display: flex;
+}
+
+.btn {
+  margin: 1rem;
+}
+
+.list-container {
+  margin-left: 2rem;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Contador de palabras</h1>
+  <div class="main-container">
+    <textarea id="text" cols="40" rows="5" placeholder="Introduce un texto"></textarea>
+    <div class="btns-container">
+      <button class="btn" onclick="countWords()">CONTAR</button>
+      <button class="btn" onclick="clearText()">CLEAR</button>
+    </div>
+  </div>
+
+  <div id="result" class="list-container"></div>
+</body>
+</html>
