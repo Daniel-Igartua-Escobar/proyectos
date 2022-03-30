@@ -1,0 +1,52 @@
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.5rem;
+  min-width: 80px;
+  margin-left: 0.5rem;
+}
+
+.btn:enabled {
+  background-color: lightgreen;
+  cursor: pointer;
+  border-color: lightgreen;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  justify-self: center;
+  border: 1px solid lightgray;
+}
+
+.img-container span {
+  padding: 10px;
+  color: gray;
+}
+
+.img-container span.title {
+  font-weight: bold;
+}
+
+@media (max-width: 875px) {
+  .main-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 655px) {
+  .main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

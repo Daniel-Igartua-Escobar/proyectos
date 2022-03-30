@@ -1,0 +1,32 @@
+h1 {
+  text-align: center;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.project-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightslategray;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer span {
+  margin: 0.75rem 0;
+}

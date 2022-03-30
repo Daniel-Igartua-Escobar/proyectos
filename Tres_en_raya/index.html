@@ -4,9 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
 <body>
-  <div></div>
+
+  <header>
+    <h1>Tres en raya</h1>
+  </header>
+
+  <main>
+
+    <div class="config-container">
+      <p>Selecciona tus fichas:</p>
+      <input type="radio" id="cbox2" value="second_checkbox" checked> <label for="cbox2">X</label>
+      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">O</label>
+    </div>
+
+    <div>
+      <p>Selecciona la dificultad:</p>
+      <input type="radio" id="cbox2" value="second_checkbox" checked> <label for="cbox2">Fácil</label>
+      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">Normal</label>
+      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">Difícil</label>
+    </div>
+
+    <div class="board-container" id="board">
+      <div class="square" onclick="move(this, 0)"></div>
+      <div class="square" onclick="move(this, 1)"></div>
+      <div class="square" onclick="move(this, 2)"></div>
+      <div class="square" onclick="move(this, 3)"></div>
+      <div class="square" onclick="move(this, 4)"></div>
+      <div class="square" onclick="move(this, 5)"></div>
+      <div class="square" onclick="move(this, 6)"></div>
+      <div class="square" onclick="move(this, 7)"></div>
+      <div class="square" onclick="move(this, 8)"></div>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" onclick="reset()">Reiniciar</button>
+    </div>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <div class="modal hide"></div>
+
 </body>
 </html>
