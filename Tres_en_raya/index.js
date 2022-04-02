@@ -1,6 +1,7 @@
 const $board = document.querySelector('#board');
 const $squares = document.querySelectorAll('.square');
 const $modal = document.querySelector('.modal');
+const $configModal = document.querySelector('#configModal');
 const COMBOS = ['012', '345', '678', '036', '147', '258', '048', '246'];
 const CONFIG = {
   win: { text: '¡HAS GANADO!', color: 'green' },
@@ -124,4 +125,12 @@ function reset() {
   $board.classList.remove('disabled');
   $modal.classList.add('hide');
   isEndgame = false;
+}
+
+function showConfig() {
+  $configModal.classList.add('show-config');
+}
+
+function hideConfig() {
+  $configModal.classList.remove('show-config');
 }

@@ -10,25 +10,12 @@
 </head>
 <body>
 
-  <header>
-    <h1>Tres en raya</h1>
+  <header class="header-text">
+    <span>Tres en raya</span>
+    <img class="icon-config"src="./images/icon_config.png" alt="config" onclick="showConfig()">
   </header>
 
   <main>
-
-    <div class="config-container">
-      <p>Selecciona tus fichas:</p>
-      <input type="radio" id="cbox2" value="second_checkbox" checked> <label for="cbox2">X</label>
-      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">O</label>
-    </div>
-
-    <div>
-      <p>Selecciona la dificultad:</p>
-      <input type="radio" id="cbox2" value="second_checkbox" checked> <label for="cbox2">Fácil</label>
-      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">Normal</label>
-      <input type="radio" id="cbox2" value="second_checkbox"> <label for="cbox2">Difícil</label>
-    </div>
-
     <div class="board-container" id="board">
       <div class="square" onclick="move(this, 0)"></div>
       <div class="square" onclick="move(this, 1)"></div>
@@ -40,15 +27,30 @@
       <div class="square" onclick="move(this, 7)"></div>
       <div class="square" onclick="move(this, 8)"></div>
     </div>
-
-    <div class="btn-container">
-      <button class="btn" onclick="reset()">Reiniciar</button>
-    </div>
   </main>
 
-  <footer>
-
+  <footer class="btn-container">
+    <button class="btn" onclick="reset()">Jugar</button>
   </footer>
+
+  <div id="configModal" class="config-container-bg">
+    <div class="config-container">
+      <div class="config-header">
+        <p class="config-title">configuracion</p>
+        <img class="icon-cancel"src="./images/icon_cancel.png" alt="salir" onclick="hideConfig()">
+      </div>
+      <p>Selecciona tus fichas:</p>
+      <input type="radio" id="equis" name="pieces" value="equis" checked> <label for="equis">X</label>
+      <input type="radio" id="circle" name="pieces" value="circle"> <label for="circle">O</label>
+      <p>Selecciona el color de las fichas:</p>
+      <input type="color" value="#ff0000">
+      <p>Selecciona la dificultad:</p>
+      <input type="radio" id="easy" name="difficulty" value="easy" checked> <label for="easy">Fácil</label>
+      <input type="radio" id="normal" name="difficulty" value="normal"> <label for="normal">Normal</label>
+      <input type="radio" id="hard"  name="difficulty" value="hard"> <label for="hard">Difícil</label>
+      <button class="config-btn" onclick="hideConfig()">Aceptar</button>
+    </div>
+  </div>
 
   <div class="modal hide"></div>
 
