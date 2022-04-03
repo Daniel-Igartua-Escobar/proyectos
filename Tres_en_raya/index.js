@@ -2,6 +2,8 @@ const $board = document.querySelector('#board');
 const $squares = document.querySelectorAll('.square');
 const $modal = document.querySelector('.modal');
 const $configModal = document.querySelector('#configModal');
+const $BOARD_VALUES =  document.querySelectorAll('.board-item-value');
+const $FEEDBACK = document.querySelector('#feedbackUser');
 const COMBOS = ['012', '345', '678', '036', '147', '258', '048', '246'];
 const CONFIG = {
   win: { text: '¡HAS GANADO!', color: 'green' },
@@ -12,7 +14,8 @@ let freeSquares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let playerPositions = '';
 let botPositions = '';
 let isEndgame = false;
-let difficulty = 'hard';
+let difficulty = 'easy';
+let piecesColor = '#000000'
 
 function move(e, position) {
   e.innerHTML = 'X';
@@ -26,13 +29,15 @@ function move(e, position) {
 
 function bot() {
   let position;
+  toggleFeedback();
+  toggleEnableBoard();
   setTimeout(() => {
     switch (difficulty) {
       case 'easy':
         position = getRandomPosition();
         break;
       case 'normal':
-        position = 'normal'
+        position = getLogicalPosition();
         break;
       case 'hard':
         position = getLogicalPosition();
@@ -42,7 +47,10 @@ function bot() {
     botPositions += position + ' ';
     removeSquarePosition(position);
     checkGame(botPositions);
-    $squares[position].innerHTML = 'O'; 
+    $squares[position].innerHTML = 'O';
+    debugger
+    toggleFeedback();
+    toggleEnableBoard();
   }, 500);
 }
 
@@ -133,4 +141,38 @@ function showConfig() {
 
 function hideConfig() {
   $configModal.classList.remove('show-config');
+}
+
+function changeColor(ev) {
+  piecesColor = ev;
+}
+
+function resetConfig() {
+  $configModal.querySelector('#equis').checked = true;
+  $configModal.querySelector('#color').value = '#000000';
+  $configModal.querySelector('#easy').checked = true;
+  hideConfig();
+}
+
+function applyChanges() {
+  const literals = {
+    easy: 'Fácil',
+    normal: 'Normal',
+    hard: 'Difícil'
+  };
+
+  selectedPiece = $configModal.querySelector('input[name="pieces"]:checked').value;
+  document.documentElement.style.setProperty('--pieces-color', piecesColor);
+  difficulty = $configModal.querySelector('input[name="difficulty"]:checked').value;
+  $BOARD_VALUES[0].innerHTML = selectedPiece;
+  $BOARD_VALUES[1].innerHTML = literals[difficulty];
+  hideConfig();
+}
+
+function toggleFeedback() {
+  $FEEDBACK.classList.toggle('not-show');
+}
+
+function toggleEnableBoard() {
+  $board.classList.toggle('not-mark');
 }

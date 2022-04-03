@@ -1,5 +1,11 @@
+:root {
+  --pieces-color: #000000;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -87,10 +93,11 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
 }
 
 .board-container {
@@ -105,16 +112,26 @@ main {
 
 .board-container.disabled {
   opacity: 0.2;
+  pointer-events: none;
+}
+
+.board-container.not-mark {
+  pointer-events: none;
 }
 
 .square {
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
+  color: var(--pieces-color, #000000);;
   font-size: 4rem;
   font-family: sans-serif;
   cursor: pointer;
+}
+
+.square:not(:empty) {
+  pointer-events: none;
 }
 
 .btn-container {
@@ -159,6 +176,32 @@ main {
 
 .hide {
   display: none;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.board-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-item-title {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
+.feedback-user {
+  font-size: 30px;
+}
+
+.feedback-user.not-show {
+  visibility: hidden;
 }
 
 @media (max-width: 620px) {
