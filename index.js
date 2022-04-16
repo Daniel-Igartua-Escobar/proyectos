@@ -16,3 +16,12 @@ async function suerte() {
 
 
 console.log(suerte());
+
+
+
+
+function showText(id) {
+  const element =   document.querySelector(`#${id}`);
+  element.querySelector('img').src = 'https://cloudfront-us-east-1.images.arcpublishing.com/radiomitre/BFQOYEFNDVDPHGY5UKJBXKIFWU.jpg';
+  element.querySelector('p').hidden = false;
+}
